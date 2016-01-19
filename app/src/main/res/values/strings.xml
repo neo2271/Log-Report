@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Log Report</string>
+    <string name="log_choice_prompt">Choose a scenario to log</string>
+</resources>
