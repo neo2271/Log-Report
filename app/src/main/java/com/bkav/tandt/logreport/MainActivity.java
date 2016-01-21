@@ -317,7 +317,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
                 // Execute ls -l /sdcard/diag_logs
                 outputStart = outputStart + exe.Executer("ls -l /sdcard/diag_logs");
-                outputStart = "\n\nLast log: " + txtCfg + "\n\n***** diag_mdlog START *****\n" + outputStart;
+                outputStart = "\n\nLast configuration file: " + txtCfg + "\n\n***** diag_mdlog START *****\n" + outputStart;
 
                 // Execute start diag_mdlog_start
                 outputStart = outputStart + exe.Executer("start diag_mdlog_start");
@@ -413,11 +413,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                     String filePath = getPath(getApplicationContext(), data.getData());
                     String fileNameExtension = filePath.substring(filePath.lastIndexOf("/") + 1);
 
-//                    String filePathCmd = filePath.replace(" ", "\\ ");
-//                    filePathCmd = filePathCmd.replace("/storage/emulated/0/", "/sdcard/");
+                    String filePathCmd = filePath.replace(" ", "\\ ");
+                    filePathCmd = filePathCmd.replace("/storage/emulated/0/", "/sdcard/");
+
+                    // Return .cfg file to config file message
+                    txtCfg = filePathCmd;
 
                     String cmd = "cp " + filePath + " " + DIAG_FILE_PATH + "/" + DIAG_FILE_NAME;
 
+                    // Check data output
 //                    tvOut.setText("\n\ncmd: " + cmd + "\n\nfilePath: " + filePath + "\n\nfileNameExtension: " + fileNameExtension + "\n\nfilePathCmd: " + filePathCmd);
 
                     ShellExecuter exe = new ShellExecuter();
