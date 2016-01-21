@@ -413,7 +413,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                     String filePath = getPath(getApplicationContext(), data.getData());
                     String fileNameExtension = filePath.substring(filePath.lastIndexOf("/") + 1);
 
-                    String filePathCmd = filePath.replace(" ", "\\ ");
+                    String filePathCmd = filePath;
+//                    filePathCmd = filePath.replace(" ", "\\ ");
                     filePathCmd = filePathCmd.replace("/storage/emulated/0/", "/sdcard/");
 
                     // Return .cfg file to config file message
