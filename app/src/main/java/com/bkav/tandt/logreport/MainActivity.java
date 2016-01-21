@@ -1,7 +1,19 @@
 package com.bkav.tandt.logreport;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.ContentUris;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +26,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -22,8 +35,16 @@ import java.util.List;
 
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
-    public static String FILE_NAME = "diag.cfg";
-    public static String PATH_DIAG_FILE = "/sdcard/diag_logs";
+    public static String DIAG_FILE_NAME = "diag.cfg";
+    public static String DIAG_FILE_PATH = "/sdcard/diag_logs";
+
+    public String[] mFileList;
+    //    private File mPath = new File(Environment.getExternalStorageDirectory() + "//yourdir//");
+    public File mPath = new File(Environment.getExternalStorageDirectory() + "sdcard");
+    public String mChosenFile;
+    public static final String FTYPE = ".cfg";
+    public static final int DIALOG_LOAD_FILE = 1000;
+    public static final int PICKFILE_RESULT_CODE = 1;
 
     public static Button btnStart;
     public static Button btnStop;
@@ -103,6 +124,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         list.add("modem_umts_as_and_interfacing_modules");
         list.add("modem_umts_as");
         list.add("modem_voice_call");
+        list.add("Select the required configuration file");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
@@ -252,6 +274,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 idRawCfg = R.raw.modem_voice_call;
                 configureConfigFile(idRawCfg);
                 break;
+            // Choose .cfg file
+            case "Select the required configuration file":
+                Toast.makeText(getApplicationContext(), "Please choose the required .cfg file", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("*/*");
+                startActivityForResult(intent, PICKFILE_RESULT_CODE);
+                break;
         }
 
         // Initialize timer
@@ -346,12 +375,12 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
     public void configureConfigFile(int idCfg) {
 
-        File dir = new File(PATH_DIAG_FILE);
+        File dir = new File(DIAG_FILE_PATH);
 
         if (dir.mkdirs() || dir.isDirectory()) {
 
             try {
-                copyRAWtoSDCard(idCfg, PATH_DIAG_FILE + File.separator + FILE_NAME);
+                copyRAWtoSDCard(idCfg, DIAG_FILE_PATH + File.separator + DIAG_FILE_NAME);
                 Toast.makeText(getApplicationContext(), "The " + txtCfg + " file configured to /sdcard/diag_logs", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -373,6 +402,128 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             in.close();
             out.close();
         }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        // TODO Auto-generated method stub
+        switch (requestCode) {
+            case PICKFILE_RESULT_CODE:
+                if (resultCode == RESULT_OK) {
+                    String filePath = getPath(getApplicationContext(), data.getData());
+                    String fileNameExtension = filePath.substring(filePath.lastIndexOf("/") + 1);
+
+//                    String filePathCmd = filePath.replace(" ", "\\ ");
+//                    filePathCmd = filePathCmd.replace("/storage/emulated/0/", "/sdcard/");
+
+                    String cmd = "cp " + filePath + " " + DIAG_FILE_PATH + "/" + DIAG_FILE_NAME;
+
+//                    tvOut.setText("\n\ncmd: " + cmd + "\n\nfilePath: " + filePath + "\n\nfileNameExtension: " + fileNameExtension + "\n\nfilePathCmd: " + filePathCmd);
+
+                    ShellExecuter exe = new ShellExecuter();
+                    exe.Executer(cmd);
+                    Toast.makeText(getApplicationContext(), "The " + fileNameExtension + " file configured to /sdcard/diag_logs", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+        }
+    }
+
+    public static String getPath(final Context context, final Uri uri) {
+
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+
+        // DocumentProvider
+        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+            // ExternalStorageProvider
+            if (isExternalStorageDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                if ("primary".equalsIgnoreCase(type)) {
+                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                }
+
+                // TODO handle non-primary volumes
+            }
+            // DownloadsProvider
+            else if (isDownloadsDocument(uri)) {
+
+                final String id = DocumentsContract.getDocumentId(uri);
+                final Uri contentUri = ContentUris.withAppendedId(
+                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                return getDataColumn(context, contentUri, null, null);
+            }
+            // MediaProvider
+            else if (isMediaDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                Uri contentUri = null;
+                if ("image".equals(type)) {
+                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                } else if ("video".equals(type)) {
+                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                } else if ("audio".equals(type)) {
+                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                }
+
+                final String selection = "_id=?";
+                final String[] selectionArgs = new String[]{
+                        split[1]
+                };
+
+                return getDataColumn(context, contentUri, selection, selectionArgs);
+            }
+        }
+        // MediaStore (and general)
+        else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            return getDataColumn(context, uri, null, null);
+        }
+        // File
+        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+
+        return null;
+    }
+
+    public static String getDataColumn(Context context, Uri uri, String selection,
+                                       String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
+
+    public static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    public static boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    public static boolean isMediaDocument(Uri uri) {
+        return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
 }
