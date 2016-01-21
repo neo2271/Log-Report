@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_irat.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_irat.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_ims_test.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_ims_test.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_1xevdo.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_1xevdo.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_ims__and_intefacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_ims__and_intefacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_data_and_intefacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_data_and_intefacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_rf_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_rf_and_interfacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_data_tput.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_data_tput.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_umts_as.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_umts_as.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_umts_as_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_umts_as_and_interfacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_lte_as.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_lte_as.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_qmi_ril_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_qmi_ril_and_interfacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_data.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_data.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_qmi_ril.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_qmi_ril.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_mmode_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_mmode_and_interfacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_generic.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_generic.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_rf.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_rf.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_data_call.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_data_call.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_1xevdo_and_intefacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_1xevdo_and_intefacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_uim.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_uim.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_geran_and_intefacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_geran_and_intefacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_geran.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_geran.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_uim_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_uim_and_interfacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_voice_call.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_voice_call.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_power_on.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_power_on.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_mmode.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_mmode.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_cgd_test.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_cgd_test.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_nas.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_nas.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_ims.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_ims.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_lte_as_and_intefacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_lte_as_and_intefacing_modules.cfg"
+    },
+    {
+        "merged": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/build/intermediates/res/merged/debug/raw/modem_nas_and_interfacing_modules.cfg",
+        "source": "/media/BACK_UP/Archives/Tools/Android/Ubuntu/workspace/LogReport/app/src/main/res/raw/modem_nas_and_interfacing_modules.cfg"
+    }
+]
